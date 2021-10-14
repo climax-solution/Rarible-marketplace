@@ -1,0 +1,3 @@
+.sidebar:not(.sidebar-end) ~ * {
+    --cui-sidebar-occupy-start: 18rem;
+}
