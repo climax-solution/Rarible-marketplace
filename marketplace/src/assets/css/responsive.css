@@ -1,0 +1,191 @@
+@media only screen and (max-width: 768px) {
+    /*
+        NFT MarketPlace Start
+    */
+    section {
+        padding: 50px 0 !important;
+    }
+    .nft-start .section-title {
+        font-size: 36px !important;
+    }
+    .nft-start p {
+        font-size: 14px !important;
+    }
+    .nft-start {
+        text-align: center !important;
+    }
+    .nft-start-counter {
+        justify-content: center;
+    }
+    .art-work-description-container {
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(50px) !important;
+        border-radius: 15px !important;
+        position: absolute !important;
+        bottom: 10% !important;
+        width: 80% !important;
+        padding: 6px 15px !important;
+        left: 50% !important;
+        transform: translate(-50%) !important;
+        box-sizing: border-box;
+    }
+    .artWorkWeekSection .artWorkMain {
+        width: 100% !important;
+        border-radius: 12px !important;
+    }
+    footer .footer-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    footer .footer-title,
+    footer .footer-in-mail-container {
+        display: flex;
+        justify-content: center;
+    }
+    .d-mobile-none {
+        display: none !important;
+    }
+    .footer-column-flex {
+        width: 50% !important;
+        text-align: center;
+    }
+    .footer-social-icons {
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 20px !important;
+    }
+    .footer-social-icons i {
+        font-size: 16px !important;
+    }
+    .footer-menu-element {
+        margin: 0 !important;
+    }
+    .d-mobile-flex-column {
+        flex-direction: column !important;
+    }
+    .d-web-none {
+        display: block !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        margin-top: 15px;
+    }
+    .margin-mobile-left {
+        margin-left: 0 !important;
+    }
+    .topSeller .headerSelect {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    .buy-font {
+        font-size: 9px !important;
+    }
+    .popup-width {
+        width: calc(100% - 25px) !important;
+    }
+    .create-collectible .single-create-collectible {
+        position: absolute !important;
+        top: -15px !important;
+        right: 10px !important;
+        background: #fff !important;
+        padding: 0 5px !important;
+    }
+    .create-collectible .create-col {
+        padding: 15px !important;
+        margin-right: 15px !important;
+    }
+    .create-single-section-container .putOnMarketplace {
+        padding: 15px !important;
+        margin-right: 10px !important;
+    }
+    .profile-user-pictures {
+        width: 103px !important;
+        height: 103px !important;
+    }
+    .profile-info-position {
+        top: -70px !important;
+    }
+    .faq-container .sub-tabs-menu .accordion a {
+        padding-left: 10% !important;
+        height: 50px !important;
+        margin-bottom: 20px;
+    }
+    .faq-container .sub-tabs-menu .accordion span:target~.accordion-content {
+        padding-top: 0 !important;
+    }
+    .mobile-sm-order-right {
+        order: 2 !important;
+    }
+    .mobile-sm-order-left {
+        order: 1 !important;
+    }
+
+    .nft-start .swiper-container, .swiper-slide{
+        width: 100% !important;
+    }
+
+
+.swiper-button-prev, .swiper-button-next{
+    top: 50% !important;
+}
+
+
+.mobile-filter-live-auc .swiper-button-prev, .mobile-filter-live-auc .swiper-button-next{
+    top: 40% !important;
+}
+
+.nft-start .swiper-container::before {
+    content: '' !important;
+    position: absolute !important;
+    width: 90% !important;
+    height: 90% !important;
+    border: solid 1px var(--red-color) !important;
+    border-radius: 15px !important;
+    top: 0px !important;
+    right: 12px !important;
+}
+
+.nft-start .swiper-container::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 90% !important;
+    height: 90% !important;
+    border: solid 1px var(--red-color) !important;
+    border-radius: 15px !important;
+    top: -7px !important;
+    right: 8px !important;
+}
+
+.nft-start .bg-lines{
+    content: '' !important;
+    position: absolute !important;
+    width: 88% !important;
+    height: 88% !important;
+    border: solid 1px red !important;
+    border-radius: 15px !important;
+    top: -15px !important;
+    right: 4px !important;
+}
+
+.navbar .navbar-search{
+    display: none !important;
+}
+
+
+.live-auction-none-mobile{
+    display: none !important;
+}
+
+.liveAuction-web-none{
+    display: block !important;
+}
+
+
+    /*
+        NFT MarketPlace Start
+    */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {}

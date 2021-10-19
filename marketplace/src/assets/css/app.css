@@ -1,0 +1,674 @@
+/* NFT MarketPlace Start -- Muhsin Deniz -- */
+
+@import './veriables.css';
+@import './responsive.css';
+
+/*
+    NFT MarketPlace Veriables
+*/
+
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: #fff;
+}
+
+.buy-art-work-week-card {
+    padding: 30px;
+}
+
+.btn-light {
+    background: var(--gray-bg);
+    border: 0.5px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 47px;
+    padding: 10px 18px;
+    color: var(--black-text);
+}
+
+.btn-light-white{
+    background: var(--btn-light-white);
+    border: 0.5px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 47px;
+    padding: 10px 18px;
+    color: var(--text-light-color);
+}
+
+.btn-light-white:hover{
+    color: var(--text-light-color);
+}
+
+section h3 b, .topSellerUserInfo h5{
+    color: var(--black-color) !important;
+}
+
+.buy-art-work-week h1, 
+.buy-art-work-week h2, 
+.buy-art-work-week h3, 
+.buy-art-work-week h4, 
+.buy-art-work-week h5, 
+.buy-art-work-week h6, 
+.buy-art-work-week p,
+.buy-art-work-week span,
+.buy-art-work-week b,
+.buy-art-work-week small, 
+.buy-art-work-week a,
+.buy-art-work-week .tab-pane{
+    color: var(--black-color);
+}
+
+.quickExplore h4{
+    color: var(--black-color);
+}
+
+.quickExplore .ant-tabs-ink-bar{
+    background: none !important;
+}
+
+.place-a-bid-popup-container div,
+.place-a-bid-popup-container b,
+.place-a-bid-popup-container h1,
+.place-a-bid-popup-container h2
+.place-a-bid-popup-container path{
+    color: var(--black-color);
+    fill: var(--black-color);
+}
+
+.profile-activity-filter-mobile path{
+    fill: var(--black-color);
+}
+
+.create-single-section-container div,
+.create-single-section-container h1,
+.create-single-section-container h2,
+.create-single-section-container h3, 
+.create-single-section-container h4, 
+.create-single-section-container h5, 
+.create-single-section-container h6{
+    color: var(--black-color);
+    background-color: var(--bg-card);
+}
+
+.create-single-section-container .prize-single-collectible input{
+    background-color: var(--bg-card);
+}
+
+.profile-pictures-infos div,
+.profile-pictures-infos h1,
+.profile-pictures-infos h2,
+.profile-pictures-infos h3, 
+.profile-pictures-infos h4, 
+.profile-pictures-infos h5, 
+.profile-pictures-infos h6,
+.profile-pictures-infos path{
+    color: var(--black-color);
+    fill: var(--black-color);
+}
+
+.create-collectible div,
+.create-collectible h1,
+.create-collectible h5,
+.create-collectible p,
+.create-collectible b{
+    color: var(--black-color);
+}
+
+.profile-pictures-infos .profile-activity-filter-mobile path{
+    fill: var(--black-color);
+}
+
+
+.profile-pictures-infos .btn-gray{
+    background: var(--gray-color);
+    border: solid 1px #fff;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    color: var(--black-color) !important;
+}
+
+
+.prize-single-collectible input{
+    background: var(--bg-white);
+}
+
+
+.nft-start h3{
+    color: var(--black-color);
+}
+
+.liveAuction-card-container small{
+    color: var(--black-color);
+}
+
+.liveAuction-card-container div,
+.liveAuction-card-container h6{
+    background-color: var(--bg-white);
+}
+
+.headerSelect h3{
+    color: var(--black-color);
+}
+
+.btn-ping  {
+    background: var(--pink-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: #fff;
+}
+
+.btn-gray {
+    background: var(--light-gray);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: var(--white-color);
+}
+
+.btn-primary-outline {
+    background: transparent;
+    border: solid 1px var(--pink-color);
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: var(--red-color);
+    width: 125px;
+    height: 45px;
+}
+
+.btn-primary-outline-big{
+    background: transparent;
+    border: solid 1px var(--pink-color);
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: var(--red-color);
+    min-width: 145px !important;
+    height: 45px;
+}
+
+.btn-primary-outline-responsive {
+    background: transparent;
+    border: solid 1px var(--pink-color);
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 12px 25px;
+    color: var(--red-color);
+}
+
+footer .footer-menu {
+    padding: 0;
+    color: var(--black-text);
+}
+
+footer .footer-title {
+    color: var(--black-text);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+footer .footer-title h6{
+    color: var(--black-text);
+}
+
+footer .footer-menu li {
+    list-style-type: none;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--black-text);
+}
+
+footer .footer-menu li:hover {
+    cursor: pointer;
+}
+
+footer .footer-social-media-container {
+    display: flex;
+    width: 100%;
+    color: var(--black-text);
+}
+
+footer p {
+    color: var(--black-text);
+    font-size: 14px;
+}
+
+footer .footer-social-media-container li {
+    list-style-type: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    color: var(--black-text);
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F9;
+    margin-right: 20px;
+    transition: linear .2s all;
+    margin-top: 25px;
+}
+
+footer .footer-social-media-container li:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: linear .2s all;
+}
+
+.footer-copy-right {
+    color: #C2C2C2;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+section {
+    padding: 50px 70px;
+}
+
+.color-red {
+    color: var(--red-color);
+}
+
+.color-orange {
+    color: var(--light-red);
+}
+
+.color-ping {
+    color: var(--pink-color);
+}
+
+footer div{
+    color: var(--black-text);
+}
+
+footer section .footer-in-email {
+    outline: none;
+    border: 0.2px solid #C7C7C7;
+    box-sizing: border-box;
+    box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.01);
+    border-radius: 24px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.artWorkWeekSection img {
+    border-radius: 14px;
+}
+
+.artWorkWeekSection .artWorkMain {
+    height: 450px !important;
+    border-radius: 12px !important;
+}
+
+.art-work-description-container {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 13px;
+    position: absolute;
+    width: 80%;
+    padding: 5px 10px;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0);
+}
+
+.footer-social-icons i {
+    font-size: 22px;
+    color: #9D9D9D;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.footer-column-flex-border {
+    border-bottom: 0.5px solid #adadad;
+}
+
+.d-web-none {
+    display: none;
+}
+
+.margin-mobile-left {
+    margin-left: 75px;
+}
+
+.topSeller .headerSelect {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.topSellerCard {
+    background-color: var(--bg-white);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+}
+
+.topSeller .topSellerCard .topSellectProfilePicture {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.topSeller .topSellerCard .topSellerUserInfo {
+    width: 100%;
+    text-align: center;
+    padding: 70px 10px 20px 10px;
+}
+
+.topSeller .topSellerCard .topSellerUserInfo h5 {
+    font-size: 13px;
+}
+
+.topSeller .topSellerCard .topSellerUserInfo small {
+    color: var(--gray-color);
+}
+
+.topSellerContent .topSellerCard .topSellectProfilePicture .confirmation {
+    width: 24px;
+    height: 24px;
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.liveAuction .liveAuction-card-container .live-image img {
+    border-radius: 15px;
+}
+
+.liveAuction .live-image {
+    position: relative;
+}
+
+.liveAuction .card-heart-icon {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 15px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    color: var(--gray-color);
+}
+
+.liveAuction .card-heart-icon i {
+    color: var(--red-color);
+}
+
+.liveAuction .card-select-icon {
+    background: var(--bg-white);
+    backdrop-filter: blur(50px);
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    border: 0.2px solid #EDECEC;
+    box-sizing: border-box;
+    box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.01);
+    border-radius: 50%;
+}
+
+.liveAuction .card-select-icon i {
+    color: var(--black-color);
+}
+
+.liveAuction .live-user-list img {
+    margin-left: -15px;
+}
+
+.liveAuction .live-user-list .live-card-tick {
+    width: 12px;
+    height: 12px;
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+}
+
+.liveAuction .live-user-list .live-card-tick i {
+    font-size: 8px;
+}
+
+.liveAuction .card-time-hours {
+    position: absolute;
+    background: rgba(var(--gray-color), 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 15px;
+    left: 20px;
+    bottom: -15px;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.quickExplore .nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+.ant-tabs-top > .ant-tabs-nav::before{
+    border: none !important;
+}
+
+.quickExplore .ant-tabs-tab{
+    background-color: rgba(157, 157, 157, .1);
+    color: var(--gray-color);
+    margin: 0 10px;
+    border-radius: 30px;
+    padding: 12px 20px !important;
+}
+
+.quickExplore .ant-tabs-tab:hover{
+    color: var(--black-color);
+}
+
+/*
+    Slider
+*/
+
+
+.nft-start .swiper-container{
+    width: 100%;
+    position: static;
+}
+
+.nft-start .swiper-slide{
+    width: 100%;
+}
+
+.nft-start .swiper-container .swiper-slide img{
+    border-radius: 15px;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled{
+    display: none;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: #e6e6e6 !important;
+    backdrop-filter: blur(50px) !important;
+    z-index: 9 !important;
+}
+
+.swiper-button-next:after{
+    font-size: 20px !important;
+    content: "→" !important;
+    color: #000;
+}
+
+.nft-start .swiper-button-prev:after{
+    font-size: 20px !important;
+    content: "\2190" !important;
+    color: #000;
+}
+
+.nft-start .slider-content{
+    position: absolute;
+    bottom: 0;
+    background: rgba(var(--slider-opacity-card), 0.8) !important;
+    backdrop-filter: blur(50px);
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.slider-conter-absolute{
+    position: absolute;
+    top: -55px;
+    border-radius: 15px;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 15px;
+    background: rgba(var(--slider-opacity-card), 0.8) !important;
+    backdrop-filter: blur(50px);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nft-start .slider-content .slider-conter-absolute h6{
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--black-color);
+}
+
+.nft-start .slider-content .slider-conter-absolute small{
+font-size: 12px;
+}
+
+.ant-dropdown-menu-item{
+    padding: 8px 12px !important;
+    border-radius: 30px !important;
+    color: var(--black-color) !important;
+}
+
+.ant-dropdown-menu{
+    background-color: var(--bg-white) !important;
+    color: var(--black-color) !important;
+}
+
+.ant-dropdown-menu-item:hover{
+    background-color: var(--pink-color) !important;
+    color: var(--white-color) !important; 
+}
+
+.ant-dropdown-menu{
+    border-radius: 12px !important;
+    padding: 10px !important;
+}
+
+.nft-start .swiper-container::before{
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border: solid 1px var(--red-color);
+    border-radius: 15px;
+    top: 0;
+    right: 0;
+}
+
+.nft-start .swiper-container::after{
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border: solid 1px var(--red-color);
+    border-radius: 15px;
+    top: -9px;
+    right: -15px;
+}
+
+.nft-start .bg-lines{
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border: solid 1px var(--red-color);
+    border-radius: 15px;
+    top: -20px;
+    right: -30px;
+}
+
+
+.liveAuction-card-container h6{
+    color: var(--black-text) !important;
+    margin-top: 15px;
+}
+
+.topSeller .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background-color: transparent;
+    color: var(--red-color);
+    border: solid 1px var(--pink-color);
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 6px 25px;
+    text-align: center;
+}
+
+.topSeller .section-select-filter{
+    margin-left: 20px;
+}
+
+.topSeller .ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+    height: auto;
+}
+
+.topSeller .ant-select-arrow path{
+    fill: var(--red-color);
+}
+
+.create-single-section-container .putOnMarketplace:hover{
+    border: solid 1px var(--pink-color) !important;
+    cursor: pointer;
+}
+
+.liveAuction-web-none{
+    display: none;
+}
+
+.swiper-button-prev::after{
+    font-size: 20px !important;
+    content: "←" !important;
+    color: #000;
+}
+
+.view-all-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all-items button{
+    max-width: 350px;
+}

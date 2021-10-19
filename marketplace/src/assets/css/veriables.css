@@ -1,0 +1,83 @@
+:root {
+    --white-color: #fff;
+    --bg-main: #FCFCFC;
+    --bg-white: #fff;
+    --primary-gradient: linear-gradient(139.9deg, #FFAB2D 1.52%, #F45959 53.55%, #E730BE 99.46%);
+    --black-color: #000;
+    --orange-color: #FEA431;
+    --bg-card: #fff;
+    --color-orange: #ea5b2b;
+    --light-dark: #979797;
+    --red-color: #EF1F1F;
+    --light-red: #EB5853;
+    --pink-color: #EA39AA;
+    --gray-color: #9D9D9D;
+    --light-gray: #C7C7C7;
+    --tabs-bg: #9D9D9D;
+    --gray-bg: #EDEDED;
+    --black-text: #000;
+    --faq-container: #1a252f;
+    --slider-opacity-card: 255, 255, 255;
+    --btn-light-white: #fff;
+    --text-light-color: #111;
+    --gray-bg-color: #8D9299;
+}
+
+/* h1, h2,h3,h4,h5,h6,p, b, small, a, li, footer{
+    color: var(--white-color) !important;
+} */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main) !important;
+}
+
+
+/*
+    Home Page
+*/
+
+.bg-white {
+    background-color: var(--bg-white) !important;
+}
+
+.nft-start{
+    color: var(--black-color);
+}
+
+.nft-start-counter H4{
+    color: var(--black-color);
+}
+
+.nft-start .section-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 111.8%;
+    color: var(--black-color);
+}
+
+.border-radius {
+    border-radius: 15px;
+}
+
+.color-gray {
+    color: var(--gray-color);
+}
+
+.color-orange {
+    color: var(--color-orange);
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
