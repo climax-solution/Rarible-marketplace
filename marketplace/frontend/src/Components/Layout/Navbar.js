@@ -6,11 +6,13 @@ import menu4Line from "../../assets/img/icons/custom/menu-4-line.svg";
 import userProfilePictures from "../../assets/img/icons/custom/userProfilePictures.png";
 import fabaLogo from "../../assets/img/custom/Faba.png";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useMoralis } from "react-moralis";
 
 const Navbar = () => {
 
     const [theme, setTheme] = useState(localStorage.getItem('theme'))
-
+    const { authenticate, isAuthenticated, user, logout } = useMoralis();
+    
     useEffect(() => {
         localStorage.setItem('theme', theme);
         if(theme === true){
