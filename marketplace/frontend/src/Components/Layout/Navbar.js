@@ -156,12 +156,12 @@ const Navbar = () => {
                                    <Link to="/Buy"><li>Buy</li></Link>
                                    <Link to="/CollectibleMultiSecond"><li> Collectible Multi Second </li></Link>
                                    <ul className="nav-bar-social-items mt-3 border-top">
-                                        <li><i class="fab fa-twitter"></i></li>
-                                        <li><i class="fab fa-telegram-plane"></i></li>
-                                        <li><i class="fab fa-instagram"></i></li>
-                                        <li><i class="fab fa-discord"></i></li>
-                                        <li><i class="fab fa-youtube"></i></li>
-                                        <li><i class="fab fa-medium-m"></i></li>
+                                        <li><i className="fab fa-twitter"></i></li>
+                                        <li><i className="fab fa-telegram-plane"></i></li>
+                                        <li><i className="fab fa-instagram"></i></li>
+                                        <li><i className="fab fa-discord"></i></li>
+                                        <li><i className="fab fa-youtube"></i></li>
+                                        <li><i className="fab fa-medium-m"></i></li>
                                      </ul>
                                </ul>
                               
@@ -173,7 +173,7 @@ const Navbar = () => {
                         </li>
 
                         <li className="nav-item ">
-                            <a href="javascript:void(0)" className="nav-link"><button className="btn btn-light-white"><span>Connect wallet</span></button></a>
+                            <a className="nav-link btn btn-light-white" onClick={() => authenticate({signingMessage: "Hello World!"})}><span>Connect wallet</span></a>
                         </li>
 
                         <li className="nav-item">

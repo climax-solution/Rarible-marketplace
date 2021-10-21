@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MoralisProvider } from "react-moralis";
-const APP_ID = "";
-const SERVER_URL = "https://YOUR_MORALIS_SERVER:1337/server";
+const APP_ID = "5UnkGBLQclHgHZ4DK9L8pw7gmPn8Iu7PdxajyR5E";
+const SERVER_URL = "https://ur4epy9v2wqy.usemoralis.com:2053/server";
 ReactDOM.render(
   <React.Fragment>
     <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
