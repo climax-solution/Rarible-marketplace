@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const [theme, setTheme] = useState(localStorage.getItem('theme'))
     const { authenticate, isAuthenticated, user, logout } = useMoralis();
-    
+    const [ User, setUser] = useState('');
     useEffect(() => {
         localStorage.setItem('theme', theme);
         if(theme === true){
@@ -45,6 +45,9 @@ const Navbar = () => {
         }
     }, [theme])
 
+    useEffect(() => {
+        if (isAuthenticated) setUser(user.get("ethAddress"));
+    },[isAuthenticated])
     let activeMode = () => {
         setTheme(!theme)
         localStorage.setItem('theme', theme);
@@ -79,44 +82,10 @@ const Navbar = () => {
             document.documentElement.style.setProperty('--gray-bg-color', '#8D9299');
         }
     }
-  
     return (
         <header>
         <nav className="navbar navbar-light navbar-expand-lg" id="myNavbar">
             <div className="container-fluid menu-reverse">
-
-                <div className="d-flex">
-
-                    <div className="d-lg-none d-sm-block mr-2">
-                        <a href="javascript:void(0)" className="nav-link nav-dark-button">
-                            <img src={searchLine} alt="" />
-                        </a>
-                    </div>
-
-                    <div className="d-lg-none d-sm-block mr-2">
-                        <a href="javascript:void(0)" className="nav-link nav-dark-button">
-                            <img src={flashLightFill} alt="" />
-                        </a>
-                    </div>
-
-                    <div className="d-lg-none d-sm-block mr-2">
-                        <a href="javascript:void(0)" className="nav-link nav-dark-button"  onClick={() => activeMode()}>
-                            <img src={vectorLogo} alt="" />
-                        </a>
-                    </div>
-
-                    <div className="navbar-toggler nav-dark-button" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <a href="javascript:void(0)" className="nav-link nav-dark-button mr-2">
-                           <img src={menu4Line} className="navbar-hamburger-show" alt="" />
-                        </a>
-                    </div>
-
-                    <div className="d-lg-none d-sm-block mr-2">
-                        <a href="javascript:void(0)" className="nav-link p-0">
-                         <img src={userProfilePictures} width="36" height="36" alt="" />
-                        </a>
-                    </div>
-                </div>
 
                 <Link to="/"> <a href="javascript:void(0)" className="navbar-brand"><img src={fabaLogo} width="63" alt="" /></a></Link>
 
@@ -172,10 +141,25 @@ const Navbar = () => {
                             <Link to="/CreateCollectible"> <a href="javascript:void(0)" className="nav-link"><button className="btn btn-primary">Create</button></a></Link>
                         </li>
 
-                        <li className="nav-item ">
-                            <a className="nav-link btn btn-light-white" onClick={() => authenticate({signingMessage: "Hello World!"})}><span>Connect wallet</span></a>
+                        {!isAuthenticated ? <li className="nav-item ">
+                            <button
+                                className="nav-link btn btn-light-white"
+                                onClick={() => authenticate() }
+                            ><span>Connect wallet</span></button>
                         </li>
-
+                        : <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src={userProfilePictures} width="36" height="36" alt="" />
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="servicesDropdown">
+                               
+                               <ul className="menu-dropdown">
+                                   <li>{User.substr(0, 14) + '...' + User.substr(-4)}</li>
+                                   <li onClick={() => logout()}><i className="fa fa-key mr-1" /> Log Out</li>
+                               </ul>
+                              
+                            </div>
+                        </li>}
                         <li className="nav-item">
                             <a href="javascript:void(0)" className="nav-link nav-dark-button" onClick={() => activeMode()}>
                                 {
