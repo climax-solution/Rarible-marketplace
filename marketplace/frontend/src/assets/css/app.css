@@ -672,3 +672,7 @@ font-size: 12px;
 .view-all-items button{
     max-width: 350px;
 }
+
+.rounded-circle {
+    border-radius: 50%;
+}
