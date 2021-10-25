@@ -32,9 +32,10 @@ const Profile = () => {
         </Menu>
     );
       
-    const { user, isAuthenticated } = useMoralis();
+    const { user, isAuthenticated, Moralis } = useMoralis();
     const [ fullName, setFullName] = useState('');
     const [isEdit, setEdit] = useState(false);
+    const [ tmpAvatar, setTmpAvatar] = useState();
     useEffect(() => {
         if (isAuthenticated) {
             if (user.get("fullname")) {
@@ -42,6 +43,16 @@ const Profile = () => {
             }
         }
     }, [isAuthenticated])
+
+    const updateProfile = async () => {
+        if (tmpAvatar) {
+            const avatar = new Moralis.File(user.get("ethAddress"), tmpAvatar);
+            user.set('avatarImage', avatar);
+        }
+        user.set("fullname", fullName);
+        await user.save();
+        alert("Done");
+    }
     return (
         <section className="profile-pictures-infos">
             <div className="container-fluid">
@@ -54,7 +65,7 @@ const Profile = () => {
                                     <div className="profile-user-pictures">
                                         <img
                                             src={
-                                                user && user.get("avatarImage") ? user.get("avatarImage") : userProfilePictures
+                                                user && user.get("avatarImage") ? user.get("avatarImage").url() : userProfilePictures
                                             }
                                             width="100%"
                                             className="rounded-circle"
@@ -79,23 +90,48 @@ const Profile = () => {
                                     
 
                                     <div className="w-100 mt-3 d-flex justify-content-between align-items-center">
-                                        <button
+                                       { !isEdit &&  <label
                                             className="bg-white border edit-profile text-center"
-                                            onClick={() => setEdit(!isEdit)}
+                                            onClick={() => setEdit(true)}
                                         >
                                             Edit Profile
-                                        </button>
+                                        </label>
+                                        }
                                         <label className="bg-white border profile-upload">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path clipRule="evenodd" clipRule="evenodd" d="M3.75 6.75H7.5V11.25H10.5V6.75H14.25L9 1.5L3.75 6.75ZM15 9V14.25H3V9H1.5V15C1.5 15.4142 1.83579 15.75 2.25 15.75H15.75C16.1642 15.75 16.5 15.4142 16.5 15V9H15Z" fill="black"/>
                                             </svg>
+                                            <input
+                                                type="file"
+                                                className="d-none"
+                                                accept="image/*"
+                                                disabled={!isEdit}
+                                                required
+                                                onChange = {(e) => setTmpAvatar(e.target.files[0])}
+                                            />
                                         </label>
-                                        <button className="bg-white border select">
+                                        <label className="bg-white border select">
                                             <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path clipRule="evenodd" clipRule="evenodd" d="M1.75 0.5C0.925 0.5 0.25 1.175 0.25 2C0.25 2.825 0.925 3.5 1.75 3.5C2.575 3.5 3.25 2.825 3.25 2C3.25 1.175 2.575 0.5 1.75 0.5ZM12.25 0.5C11.425 0.5 10.75 1.175 10.75 2C10.75 2.825 11.425 3.5 12.25 3.5C13.075 3.5 13.75 2.825 13.75 2C13.75 1.175 13.075 0.5 12.25 0.5ZM5.5 2C5.5 1.175 6.175 0.5 7 0.5C7.825 0.5 8.5 1.175 8.5 2C8.5 2.825 7.825 3.5 7 3.5C6.175 3.5 5.5 2.825 5.5 2Z" fill="black"/>
                                             </svg>
                                                 
-                                        </button>
+                                        </label>
+                                    </div>
+                                    <div className="w-100 mt-3 d-flex justify-content-between align-items-center">
+                                        {isEdit && <>
+                                            <label
+                                                className="bg-white border edit-profile text-center"
+                                                onClick={() => setEdit(!isEdit)}
+                                            >
+                                                Cancel
+                                            </label>
+                                            <label
+                                                className="bg-white border edit-profile text-center"
+                                                onClick={() => updateProfile()}
+                                            >
+                                                Update
+                                            </label>
+                                        </>}
                                     </div>
                                 </div>
                             </div>
