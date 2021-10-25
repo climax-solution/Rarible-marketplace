@@ -149,7 +149,7 @@ const Navbar = () => {
                         </li>
                         : <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src={userProfilePictures} width="36" height="36" alt="" />
+                                <img src={user.get("avatarImage") ? user.get("avatarImage").url() : userProfilePictures} width="36" height="36" alt="" />
                             </a>
                             <div className="dropdown-menu" aria-labelledby="servicesDropdown">
                                

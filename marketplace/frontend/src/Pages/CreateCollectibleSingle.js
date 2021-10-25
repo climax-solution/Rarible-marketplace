@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import collectibleSingle from "../assets/img/icons/custom/collectible-single.svg";
 import unlock from "../assets/img/icons/custom/unlock.svg";
 import sonsuz from "../assets/img/icons/custom/sonsuz.svg";
@@ -8,19 +8,32 @@ import {
     Link
   } from "react-router-dom";
 import CreateCollectibleMultiplePopup from '../Components/Popup/CreateCollectibleMultiplePopup';
+import EmptyImage from "../assets/img/custom/empty.png";
+import "../assets/css/create-single.css";
 
-  
 const CreateCollectibleSingle = () => {
 
     const [singleCollectionPopup, setSingleCollectionPopup] = useState(false);
+    const [PreviewImage, setAssets] = useState();
+    useEffect(() => {
+        setAssets(EmptyImage);
+    },[])
 
+    const setPreviewImage = (e) => {
+        if (e.target.files.length > 0) {
+            setAssets(URL.createObjectURL(e.target.files[0]));
+        }
+        else {
+            setAssets(EmptyImage);
+        }
+    }
     return (
         <>
 
         {
             singleCollectionPopup && <CreateCollectibleMultiplePopup setSingleCollectionPopup={setSingleCollectionPopup} />
         }
-
+    
     <section className="create-single-section-container">
         <div className="container">
             <div className="row">
@@ -44,7 +57,11 @@ const CreateCollectibleSingle = () => {
                                 PNG, GIF, WEBP, MP4 OR MP3. mAX 100mb
                             </div>
 
-                            <button className="btn-ping  w-50 mt-4">Choose file</button>
+                            <label className="btn-ping text-center w-50 mt-4">
+                                Choose file
+                                <input type="file" className="d-none" onChange={setPreviewImage}/>
+
+                            </label>
                         </div>
                     </div>
 
@@ -154,8 +171,9 @@ const CreateCollectibleSingle = () => {
                 </div>
                 <div className="col-sm-12 col-lg-6 ">
                     <h5><b>Preview</b> </h5>
-                    <div className="border border-radius text-gray d-flex justify-content-center align-items-center p-5">
-                        Upload file to preview your brand new NFT
+                    <div className="border border-radius text-gray d-flex flex-column align-items-center p-5">
+                        <img src={PreviewImage} alt="preview" className="preview-image"/>
+                        <span className="mt-2">Upload file to preview your brand new NFT</span>
                     </div>
                 </div>
 
